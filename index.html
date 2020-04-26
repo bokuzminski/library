@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library js project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="form-style-5">
+        <form id="userForm">
+            <fieldset>
+                <legend> Book Info</legend>
+                <input type="text" name="field1" placeholder="Author">
+                <input type="text" name="field2" placeholder="Book title">
+                <input type="text" name="field2" placeholder="Number of pages">
+                <label for="job">Did you read it?</label>
+                <select id="job" name="field4">
+                    <option value="finished">Yes</option>
+                    <option value="reading">Still reading</option>
+                </select>
+            </fieldset>
+            <input type="submit" value="Add to list" id="submitBtn" />
+        </form>
+    </div>
+    <div class="limiter">
+        <div class="container-table100">
+            <div class="wrap-table100">
+                <div class="table100">
+                    <table>
+                        <thead>
+                            <tr class="table100-head">
+                                <th class="column1">Author</th>
+                                <th class="column2">Book title</th>
+                                <th class="column3">Pages</th>
+                                <th class="column4">Read or not</th>
+                                <th class="column5">Delete book</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="column1" id="author">J.R.R Tolkien</td>
+                                <td class="column2" id="title">Lord of the Rings: Return of the King</td>
+                                <td class="column3" id="pages">450</td>
+                                <td class="column4" id="read">Still reading</td>
+                                <td class="column5" id="remove">X</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="script.js"></script>
+
+</html>
