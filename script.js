@@ -30,8 +30,17 @@ function addBookToLibrary(author, title, pages, isRead) {
 
 function Render() {
     const rowContainer = document.querySelector("tbody");
-    const div = document.createElement("div");
-    rowContainer.appendChild(div);
+    
+    myLibrary.forEach(item => {
+        const tr = document.createElement("tr");
+        rowContainer.appendChild(tr);
+        const td = document.createElement("td");
+        td.classList.add("column1");
+        td.innerHTML = item.author;
+        tr.appendChild(td)
+        
+    });
 }
-Render();
+
 addBookToLibrary("Daniel Carver", "How to kill a negro", '250', "no");
+Render();
