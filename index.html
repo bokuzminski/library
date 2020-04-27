@@ -13,16 +13,16 @@
         <form id="userForm">
             <fieldset>
                 <legend> Book Info</legend>
-                <input type="text" name="field1" placeholder="Author">
-                <input type="text" name="field2" placeholder="Book title">
-                <input type="text" name="field2" placeholder="Number of pages">
-                <label for="job">Did you read it?</label>
-                <select id="job" name="field4">
-                    <option value="finished">Yes</option>
-                    <option value="reading">Still reading</option>
+                <input type="text" name="field1" placeholder="Author" id="author">
+                <input type="text" name="field2" placeholder="Book title" id="title">
+                <input type="text" name="field2" placeholder="Number of pages" id="pages">
+                <label for="read">Did you read it?</label>
+                <select name="read" id="readSelect">
+                    <option value="1" selected="selected">Yes</option>
+                    <option value="2">Still reading</option>
                 </select>
             </fieldset>
-            <input type="submit" value="Add to list" id="submitBtn" />
+            <button type="submit" value="Add to list" id="submitBtn">SUBMIT </button>
         </form>
     </div>
     <div class="limiter">
@@ -40,13 +40,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="column1" id="author">J.R.R Tolkien</td>
-                                <td class="column2" id="title">Lord of the Rings: Return of the King</td>
-                                <td class="column3" id="pages">450</td>
-                                <td class="column4" id="read">Still reading</td>
-                                <td class="column5" id="remove">X</td>
-                            </tr>
+                            
                         </tbody>
                     </table>
                 </div>
