@@ -76,6 +76,7 @@ function addFormData() {
     } else {
         addBookToLibrary(author, title, pages, text);
     }
+    form.reset();
 }
 
 function deleteBook(index) {
