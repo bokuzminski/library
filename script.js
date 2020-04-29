@@ -1,14 +1,8 @@
-/* 
-- take form data and store it in an object
-- store the object in an array
-
-
-Add form validation, toggle read status on click, storage/database??
-
-
-*/
-
-let btn = document.querySelector("#submitBtn").addEventListener('click', () => addFormData());
+let form = document.querySelector("form");
+form.addEventListener('submit', event => {
+    event.preventDefault();
+    addFormData();
+})
 
 let myLibrary = [];
 
@@ -47,9 +41,17 @@ function Render() {
                     break;
                 case 4:
                     element.innerHTML = item.isRead;
+                    element.onclick = () => {
+                        if (element.innerHTML === "Yes") {
+                            element.innerHTML = "Still reading"
+                        } else {
+                            element.innerHTML = "Yes";
+                        }
+                    };
                     break;
                 case 5:
-                    element.innerHTML = `<button id="delete"onclick=deleteBook(${iterator})>X</button>`;
+                    element.innerHTML =
+                        `<button id="delete"onclick=deleteBook(${iterator})>X</button>`;
                     break;
             }
             tr.appendChild(element);
@@ -59,16 +61,21 @@ function Render() {
 }
 
 function addFormData() {
-    let form = document.getElementById("userForm");
-    function handleForm(event) { event.preventDefault(); }
-    form.addEventListener('submit', handleForm);
-
     const author = document.getElementById("author").value;
     const title = document.getElementById("title").value;
     const pages = document.getElementById("pages").value;
     const read = document.getElementById("readSelect");
     const text = read.options[read.selectedIndex].text;
-    addBookToLibrary(author, title, pages, text);
+
+    if (author === null || author === '') {
+        alert('Author name must not be empty.', 'Danger!');
+    } else if (title === null || title === '') {
+        alert('Title must not be empty.', 'Danger!');
+    } else if (pages === null || pages === '') {
+        alert('page number must not be empty.', 'Danger!');
+    } else {
+        addBookToLibrary(author, title, pages, text);
+    }
 }
 
 function deleteBook(index) {
